@@ -1,8 +1,6 @@
 import Link from 'next/link';
 
-interface NavbarProps {
-  toggleTheme: () => void;
-}
+import ToggleSwitch from '../toggle-switch/ToggleSwitch';
 
 interface NavLinkProps {
   href: string;
@@ -19,14 +17,12 @@ const NavLink: React.FC<NavLinkProps> = ({ href, text }) => {
   );
 };
 
-const Navbar: React.FC<NavbarProps> = ({ toggleTheme }) => {
+const Navbar = () => {
   const navLinks = [
     { href: '/features', text: 'Features' },
     { href: '/pricing', text: 'Pricing' },
     { href: '/contact', text: 'Contact' },
   ];
-
-  const toggleButtonClass = `rounded-full bg-gray-100 px-3 py-2 text-gray-600 shadow-md transition hover:bg-gray-200 dark:bg-gray-700 dark:text-gray-300 dark:hover:bg-gray-600`;
 
   return (
     <header className="bg-white shadow-md dark:bg-gray-900">
@@ -40,12 +36,7 @@ const Navbar: React.FC<NavbarProps> = ({ toggleTheme }) => {
             <NavLink key={index} href={link.href} text={link.text} />
           ))}
         </nav>
-
-        <div>
-          <button onClick={toggleTheme} className={toggleButtonClass}>
-            Toggle Theme
-          </button>
-        </div>
+        <ToggleSwitch />
       </div>
     </header>
   );
