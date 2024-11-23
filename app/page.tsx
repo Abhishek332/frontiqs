@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 
-import { Navbar } from './components';
+import { Navbar, SideBar } from './components';
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState(
@@ -24,6 +24,7 @@ const App: React.FC = () => {
   return (
     <div>
       <Navbar toggleTheme={toggleTheme} />
+      <SideBar />
     </div>
   );
 };
