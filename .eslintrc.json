@@ -2,10 +2,33 @@
   "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
   "plugins": ["prettier", "simple-import-sort", "unused-imports"],
   "rules": {
-    "prettier/prettier": "error",
+    // Security Rules
+    "no-eval": "error",
+    "no-new-func": "error",
+    "no-throw-literal": "error",
+
+    // Code Quality Rules
+    "prefer-const": "warn",
+    "camelcase": "warn",
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-debugger": "warn",
+
+    // Import & Sorting Rules
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
     "unused-imports/no-unused-imports": "error",
-    "import/no-anonymous-default-export": "warn"
+    "import/no-anonymous-default-export": "warn",
+    "import/order": [
+      "error",
+      {
+        "groups": [
+          ["builtin", "external"],
+          ["internal"],
+          ["parent", "sibling", "index"]
+        ],
+        "alphabetize": { "order": "asc", "caseInsensitive": true }
+      }
+    ],
+    "import/no-duplicates": "error"
   }
 }
