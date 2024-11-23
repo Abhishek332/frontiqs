@@ -1,6 +1,16 @@
 {
-  "extends": ["next/core-web-vitals", "next/typescript", "prettier"],
-  "plugins": ["prettier", "simple-import-sort", "unused-imports"],
+  "extends": [
+    "next/core-web-vitals",
+    "next/typescript",
+    "prettier",
+    "plugin:tailwindcss/recommended"
+  ],
+  "plugins": [
+    "prettier",
+    "simple-import-sort",
+    "unused-imports",
+    "tailwindcss"
+  ],
   "rules": {
     // Security Rules
     "no-eval": "error",
