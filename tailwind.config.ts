@@ -1,4 +1,6 @@
-import type { Config } from 'tailwindcss';
+import aspectRatio from '@tailwindcss/aspect-ratio';
+import forms from '@tailwindcss/forms';
+import typography from '@tailwindcss/typography';
 
 export default {
   content: [
@@ -6,6 +8,7 @@ export default {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  plugins: [forms, typography, aspectRatio],
   theme: {
     extend: {
       colors: {
@@ -14,5 +17,4 @@ export default {
       },
     },
   },
-  plugins: [],
-} satisfies Config;
+};
