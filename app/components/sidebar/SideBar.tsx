@@ -16,15 +16,11 @@ const ListItem: React.FC<{ href: string; text: string }> = ({ href, text }) => {
 const SideBar: React.FC = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
-  const toggleSidebar = () => setIsCollapsed(!isCollapsed);
-
-  const getInitialWidth = () => (isCollapsed ? '4rem' : '16rem');
-  const getButtonClass = () =>
-    `rounded-full bg-gray-200 p-2 shadow-md transition hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700`;
   const navClass = `mt-6 w-full ${isCollapsed ? 'hidden' : 'block'} px-4`;
+  const buttonClass = `rounded-full bg-gray-200 p-2 shadow-md transition hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700`;
+  const initialProps = { width: isCollapsed ? '4rem' : '16rem' };
 
-  const initialProps = { width: getInitialWidth() };
-  const buttonClass = getButtonClass();
+  const toggleSidebar = () => setIsCollapsed(!isCollapsed);
 
   return (
     <motion.aside
