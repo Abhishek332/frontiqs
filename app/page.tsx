@@ -22,9 +22,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <div>
-      <Navbar toggleTheme={toggleTheme} />
+    <div className="flex">
       <SideBar />
+      <main className="w-full">
+        <Navbar toggleTheme={toggleTheme} />
+      </main>
     </div>
   );
 };
