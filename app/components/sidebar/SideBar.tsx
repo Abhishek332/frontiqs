@@ -18,14 +18,12 @@ const SideBar: React.FC = () => {
 
   const navClass = `mt-6 w-full ${isCollapsed ? 'hidden' : 'block'} px-4`;
   const buttonClass = `rounded-full bg-gray-200 p-2 shadow-md transition hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700`;
-  const initialProps = { width: isCollapsed ? '4rem' : '16rem' };
 
   const toggleSidebar = () => setIsCollapsed(!isCollapsed);
 
   return (
     <motion.aside
-      initial={initialProps}
-      animate={initialProps}
+      animate={{ width: isCollapsed ? '4rem' : '16rem' }}
       className="fixed left-0 top-0 flex h-screen flex-col items-center bg-white pb-6 pt-4 shadow-lg transition-all dark:bg-gray-900 dark:shadow-gray-800"
     >
       {/* Toggle Button */}
