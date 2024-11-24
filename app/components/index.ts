@@ -2,7 +2,7 @@ export { default as Button } from './button/Button';
 export { default as Card } from './card/Card';
 export { default as FileUpload } from './file-upload/FileUpload';
 export { default as Input } from './input-fields/InputField';
-export { default as MatricsPlaceholder } from './matrics-placeholder/MatricsPlaceholder';
+export { default as MetricsPlaceholder } from './metrics-placeholder/MetricsPlaceholder';
 export { default as Modal } from './modal/Modal';
 export { default as Navbar } from './navbar/NavBar';
 export { default as Notification } from './notification/Notification';
