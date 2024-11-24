@@ -32,6 +32,8 @@ module.exports = {
         xl: '16px',
       },
       boxShadow: {
+        'neumorphic-light': '8px 8px 15px #d1d9e6, -8px -8px 15px #ffffff',
+        'neumorphic-dark': '8px 8px 15px #1a1a1a, -8px -8px 15px #2e2e2e',
         neumorphic:
           '8px 8px 16px rgba(0, 0, 0, 0.2), -8px -8px 16px rgba(255, 255, 255, 0.7)',
         glass: '0 4px 6px rgba(0, 0, 0, 0.1)',
