@@ -22,7 +22,7 @@ const SideBar: React.FC = () => {
     <motion.aside
       initial={{ width: '4rem' }}
       animate={{ width: isCollapsed ? '4rem' : '16rem' }}
-      transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       className="fixed left-0 top-0 flex h-screen flex-col items-center bg-white pb-6 pt-4 shadow-lg dark:bg-gray-900 dark:shadow-gray-800"
     >
       {/* Toggle Button */}
