@@ -5,7 +5,7 @@ type InputProps = React.DetailedHTMLProps<
   HTMLInputElement
 > & {
   label: string;
-  error?: string;
+  error: string | null;
 };
 
 const Input: React.FC<InputProps> = ({
@@ -14,7 +14,7 @@ const Input: React.FC<InputProps> = ({
   value = '',
   onChange,
   label,
-  error,
+  error = null,
   ...props
 }) => {
   const inputId = `${label.toLowerCase().replace(/\s+/g, '-')}-input`;
