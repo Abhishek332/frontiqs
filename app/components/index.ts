@@ -4,6 +4,7 @@ export { default as Input } from './input-fields/InputField';
 export { default as MatricsPlaceholder } from './matrics-placeholder/MatricsPlaceholder';
 export { default as Modal } from './modal/Modal';
 export { default as Navbar } from './navbar/NavBar';
+export { default as Notification } from './notification/Notification';
 export { default as ProgressBar } from './progress-bar/ProgressBar';
 export { default as SideBar } from './sidebar/SideBar';
 export { default as Table } from './table/Table';
