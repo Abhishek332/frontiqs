@@ -40,7 +40,8 @@
       // Apply the override to API routes only
       "files": ["app/api/**/*"],
       "rules": {
-        "no-console": "off" // Disable `no-console` rule for API routes
+        "no-console": "off", // Disable `no-console` rule for API routes
+        "@typescript-eslint/no-explicit-any": "off"
       }
     }
   ]
