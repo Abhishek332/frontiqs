@@ -5,12 +5,7 @@
     "prettier",
     "plugin:tailwindcss/recommended"
   ],
-  "plugins": [
-    "prettier",
-    "simple-import-sort",
-    "unused-imports",
-    "tailwindcss"
-  ],
+  "plugins": ["prettier", "unused-imports", "tailwindcss"],
   "rules": {
     // Security Rules
     "no-eval": "error",
@@ -24,10 +19,9 @@
     "no-debugger": "warn",
 
     // Import & Sorting Rules
-    "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error",
     "unused-imports/no-unused-imports": "error",
     "import/no-anonymous-default-export": "warn",
+    "import/no-duplicates": "error",
     "import/order": [
       "error",
       {
@@ -36,9 +30,9 @@
           ["internal"],
           ["parent", "sibling", "index"]
         ],
-        "alphabetize": { "order": "asc", "caseInsensitive": true }
+        "alphabetize": { "order": "asc", "caseInsensitive": true },
+        "newlines-between": "always"
       }
-    ],
-    "import/no-duplicates": "error"
+    ]
   }
 }
