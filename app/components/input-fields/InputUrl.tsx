@@ -26,16 +26,16 @@ const URLInput: React.FC<URLInputProps> = ({ onURLSubmit }) => {
   };
 
   return (
-    <div className="flex flex-col items-center p-4">
-      <div className="w-full max-w-sm">
+    <div className='flex flex-col items-center p-4'>
+      <div className='w-full max-w-sm'>
         <Input
-          label="Enter URL for repository or code:"
+          label='Enter URL for repository or code:'
           value={url}
           onChange={handleChange}
-          placeholder="https://github.com/your/repository"
+          placeholder='https://github.com/your/repository'
           error={error}
         />
-        <Button onClick={handleSubmit} text="Submit URL" />
+        <Button onClick={handleSubmit} text='Submit URL' />
       </div>
     </div>
   );

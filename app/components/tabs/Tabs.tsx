@@ -15,7 +15,7 @@ const Tabs: React.FC<TabProps> = ({ tabs, activeTab = 0, onTabChange }) => {
   };
 
   return (
-    <div className="flex border-b border-gray-300 dark:border-gray-700">
+    <div className='flex border-b border-gray-300 dark:border-gray-700'>
       {tabs.map((tab, index) => (
         <button
           key={index}

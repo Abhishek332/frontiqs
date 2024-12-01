@@ -36,28 +36,28 @@ const FileUpload: React.FC<FileUploadProps> = ({ onFileUpload }) => {
   };
 
   return (
-    <div className="flex flex-col items-center rounded-md border-2 border-dashed border-gray-400 p-4">
+    <div className='flex flex-col items-center rounded-md border-2 border-dashed border-gray-400 p-4'>
       <input
-        type="file"
+        type='file'
         accept={allowedExtensions.join(',')}
         onChange={handleFileChange}
-        className="hidden"
-        id="file-upload"
+        className='hidden'
+        id='file-upload'
       />
       <label
-        htmlFor="file-upload"
-        className="cursor-pointer text-gray-700 dark:text-gray-300"
+        htmlFor='file-upload'
+        className='cursor-pointer text-gray-700 dark:text-gray-300'
       >
-        <div className="rounded-md border border-gray-300 bg-gray-100 p-4 shadow-sm dark:border-gray-600 dark:bg-gray-800">
+        <div className='rounded-md border border-gray-300 bg-gray-100 p-4 shadow-sm dark:border-gray-600 dark:bg-gray-800'>
           Drag and drop or click to upload code file
         </div>
       </label>
       {fileName && (
-        <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">
+        <p className='mt-2 text-sm text-gray-600 dark:text-gray-400'>
           {fileName}
         </p>
       )}
-      {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
+      {error && <p className='mt-2 text-sm text-red-500'>{error}</p>}
     </div>
   );
 };

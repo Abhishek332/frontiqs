@@ -25,13 +25,13 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="bg-white shadow-md dark:bg-gray-900">
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <div className="text-xl font-bold text-gray-800 dark:text-white">
+    <header className='bg-white shadow-md dark:bg-gray-900'>
+      <div className='mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8'>
+        <div className='text-xl font-bold text-gray-800 dark:text-white'>
           FrontIQs
         </div>
 
-        <nav className="hidden space-x-6 md:flex">
+        <nav className='hidden space-x-6 md:flex'>
           {navLinks.map((link, index) => (
             <NavLink key={index} href={link.href} text={link.text} />
           ))}

@@ -23,12 +23,12 @@ const SideBar: React.FC = () => {
       initial={{ width: '4rem' }}
       animate={{ width: isCollapsed ? '4rem' : '16rem' }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-      className="fixed left-0 top-0 flex h-screen flex-col items-center bg-white pb-6 pt-4 shadow-lg dark:bg-gray-900 dark:shadow-gray-800"
+      className='fixed left-0 top-0 flex h-screen flex-col items-center bg-white pb-6 pt-4 shadow-lg dark:bg-gray-900 dark:shadow-gray-800'
     >
       {/* Toggle Button */}
       <button
         onClick={toggleSidebar}
-        className="rounded-full bg-gray-200 p-2 shadow-md transition hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700"
+        className='rounded-full bg-gray-200 p-2 shadow-md transition hover:bg-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700'
       >
         {isCollapsed ? '>' : '<'}
       </button>
@@ -38,12 +38,12 @@ const SideBar: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: isCollapsed ? 0 : 1 }}
         transition={{ duration: 0.3 }}
-        className="mt-6 w-full px-4"
+        className='mt-6 w-full px-4'
       >
-        <ul className="space-y-4">
-          <ListItem href="#dashboard" text="Dashboard" />
-          <ListItem href="#analytics" text="Analytics" />
-          <ListItem href="#settings" text="Settings" />
+        <ul className='space-y-4'>
+          <ListItem href='#dashboard' text='Dashboard' />
+          <ListItem href='#analytics' text='Analytics' />
+          <ListItem href='#settings' text='Settings' />
         </ul>
       </motion.nav>
     </motion.aside>

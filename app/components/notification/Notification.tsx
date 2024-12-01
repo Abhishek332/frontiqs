@@ -29,7 +29,7 @@ const Notification: React.FC<NotificationProps> = ({
       <span>{message}</span>
       <button
         onClick={onClose}
-        className="rounded-full bg-white/20 px-2 py-1 text-sm text-white hover:bg-white/30 focus:outline-none"
+        className='rounded-full bg-white/20 px-2 py-1 text-sm text-white hover:bg-white/30 focus:outline-none'
       >
         ×
       </button>

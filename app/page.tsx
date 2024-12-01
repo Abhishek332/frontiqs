@@ -5,9 +5,9 @@ import { Navbar, SideBar } from './components';
 
 const App: React.FC = () => {
   return (
-    <div className="flex">
+    <div className='flex'>
       <SideBar />
-      <main className="w-full">
+      <main className='w-full'>
         <Navbar />
       </main>
     </div>

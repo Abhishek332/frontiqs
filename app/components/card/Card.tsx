@@ -16,8 +16,8 @@ const Card: React.FC<CardProps> = ({ title, content, styleType = 'glass' }) => {
 
   return (
     <div className={`${baseStyle} ${styleVariants[styleType]}`}>
-      <h3 className="text-lg font-semibold">{title}</h3>
-      <p className="mt-2 text-sm">{content}</p>
+      <h3 className='text-lg font-semibold'>{title}</h3>
+      <p className='mt-2 text-sm'>{content}</p>
     </div>
   );
 };

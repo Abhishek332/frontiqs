@@ -27,11 +27,11 @@ const Input: React.FC<InputProps> = ({
   } dark:bg-gray-800 dark:text-gray-200 dark:focus:ring-blue-500`;
 
   return (
-    <div className="mb-6">
+    <div className='mb-6'>
       {/* Label with `htmlFor` for accessibility */}
       <label
         htmlFor={inputId}
-        className="mb-2 block font-medium text-gray-700 dark:text-gray-300"
+        className='mb-2 block font-medium text-gray-700 dark:text-gray-300'
       >
         {label}
       </label>
@@ -45,7 +45,7 @@ const Input: React.FC<InputProps> = ({
         className={inputClasses}
       />
       {/* Display error message if the error prop is provided */}
-      {error && <p className="mt-2 text-sm text-red-500">{error}</p>}
+      {error && <p className='mt-2 text-sm text-red-500'>{error}</p>}
     </div>
   );
 };

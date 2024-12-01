@@ -9,7 +9,7 @@ const ToggleSwitch = () => {
   // Sync with system preference on initial load
   useEffect(() => {
     const prefersDark = window.matchMedia(
-      '(prefers-color-scheme: dark)'
+      '(prefers-color-scheme: dark)',
     ).matches;
     setTheme(prefersDark ? 'dark' : 'light');
     document.documentElement.classList.toggle('dark', prefersDark);
@@ -31,10 +31,10 @@ const ToggleSwitch = () => {
   const switchClass = `relative flex h-7 w-12 items-center rounded-full bg-gray-300 p-1 shadow-inner transition dark:bg-gray-700`;
 
   return (
-    <div className="flex items-center justify-center">
+    <div className='flex items-center justify-center'>
       <button
         onClick={toggleTheme}
-        aria-label="Toggle Dark Mode"
+        aria-label='Toggle Dark Mode'
         className={switchClass}
       >
         <span
