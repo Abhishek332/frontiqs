@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import Input from './InputField';
+import Button from '../button/Button';
 
 interface URLInputProps {
   onURLSubmit: (url: string) => void;
@@ -34,12 +35,7 @@ const URLInput: React.FC<URLInputProps> = ({ onURLSubmit }) => {
           placeholder="https://github.com/your/repository"
           error={error}
         />
-        <button
-          onClick={handleSubmit}
-          className="mt-3 w-full rounded-md bg-blue-500 py-2 text-white hover:bg-blue-600"
-        >
-          Submit URL
-        </button>
+        <Button onClick={handleSubmit} text="Submit URL" />
       </div>
     </div>
   );
