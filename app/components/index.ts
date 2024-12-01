@@ -12,3 +12,4 @@ export { default as Table } from './table/Table';
 export { default as Tabs } from './tabs/Tabs';
 export { default as ToggleSwitch } from './toggle-switch/ToggleSwitch';
 export { default as Tooltip } from './tooltip/Tooltip';
+export { default as Alert } from './alert/Alert';
