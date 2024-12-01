@@ -1,5 +1,5 @@
 'use client';
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 import React, { useState } from 'react';
 
 import { Alert, Button, FileUpload, Input } from '../components';
@@ -9,6 +9,7 @@ const CodeAnalyzer: React.FC = () => {
   const [url, setUrl] = useState('');
   const [results, setResults] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleAnalyze = async () => {
     setLoading(true);
@@ -23,8 +24,8 @@ const CodeAnalyzer: React.FC = () => {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setResults(response.data.results);
-    } catch {
-      setResults('Error analyzing code.');
+    } catch (error) {
+      setError((error as AxiosError).message);
     } finally {
       setLoading(false);
     }
@@ -49,6 +50,8 @@ const CodeAnalyzer: React.FC = () => {
           <pre className='whitespace-pre-wrap'>{results}</pre>
         </Alert>
       )}
+
+      {error && <Alert type='error'>{error}</Alert>}
     </div>
   );
 };
