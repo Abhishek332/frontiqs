@@ -34,5 +34,14 @@
         "newlines-between": "always"
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      // Apply the override to API routes only
+      "files": ["app/api/**/*"],
+      "rules": {
+        "no-console": "off" // Disable `no-console` rule for API routes
+      }
+    }
+  ]
 }
