@@ -3,6 +3,7 @@ import { ESLint } from 'eslint';
 import fs from 'fs';
 import multer from 'multer';
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
 import path from 'path';
 
 // Custom type for Next.js API Request with file
@@ -40,10 +41,7 @@ const multerWrapper = (req: NextApiRequestWithFile, res: NextApiResponse) =>
   });
 
 // POST Handler
-const handlePost = async (
-  req: NextApiRequestWithFile,
-  res: NextApiResponse,
-) => {
+export async function POST(req: NextApiRequestWithFile, res: NextApiResponse) {
   try {
     await multerWrapper(req, res); // Handle file uploads
 
@@ -73,31 +71,24 @@ const handlePost = async (
     const formattedResults = formatter.format(results);
     console.log('Formatted Results:', formattedResults);
 
-    return res.status(200).json({ results: formattedResults });
+    const response = new NextResponse(
+      JSON.stringify({ results: formattedResults }),
+      {
+        status: 200,
+        headers: { 'Content-Type': 'application/json' },
+      },
+    );
+
+    return response;
   } catch (error) {
     console.error('Error processing code:', error);
-    return res
-      .status(500)
-      .json({ message: 'Error processing code', error: error.message });
+    const errorResponse = new NextResponse(
+      JSON.stringify({ error: 'Internal Server Error' }),
+      {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      },
+    );
+    return errorResponse;
   }
-};
-
-// Method Not Allowed Handler
-const handleMethodNotAllowed = (
-  req: NextApiRequestWithFile,
-  res: NextApiResponse,
-) => {
-  return res.status(405).json({ message: 'Method Not Allowed' });
-};
-
-// Main handler function to route requests
-const handler = (req: NextApiRequestWithFile, res: NextApiResponse) => {
-  switch (req.method) {
-    case 'POST':
-      return handlePost(req, res);
-    default:
-      return handleMethodNotAllowed(req, res);
-  }
-};
-
-export default handler;
+}
