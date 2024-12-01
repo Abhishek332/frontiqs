@@ -5,7 +5,7 @@ type InputProps = React.DetailedHTMLProps<
   HTMLInputElement
 > & {
   label: string;
-  error: string | null;
+  error?: string | null;
 };
 
 const Input: React.FC<InputProps> = ({
