@@ -43,7 +43,6 @@ const CodeAnalyzer: React.FC = () => {
       <FileUpload onFileUpload={(selectedFile) => setFile(selectedFile)} />
       <Button
         onClick={handleAnalyze}
-        disabled={false}
         text='Analyze Code'
       />
 
