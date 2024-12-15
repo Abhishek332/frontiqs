@@ -35,7 +35,10 @@ const URLInput: React.FC<URLInputProps> = ({ onURLSubmit }) => {
           placeholder='https://github.com/your/repository'
           error={error}
         />
-        <Button onClick={handleSubmit} text='Submit URL' />
+        <Button
+          onClick={handleSubmit}
+          text='Submit URL'
+        />
       </div>
     </div>
   );

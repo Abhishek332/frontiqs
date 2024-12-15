@@ -33,7 +33,11 @@ const Navbar = () => {
 
         <nav className='hidden space-x-6 md:flex'>
           {navLinks.map((link, index) => (
-            <NavLink key={index} href={link.href} text={link.text} />
+            <NavLink
+              key={index}
+              href={link.href}
+              text={link.text}
+            />
           ))}
         </nav>
         <ToggleSwitch />

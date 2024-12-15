@@ -6,7 +6,10 @@ const ListItem: React.FC<{ href: string; text: string }> = ({ href, text }) => {
 
   return (
     <li>
-      <a href={href} className={itemClass}>
+      <a
+        href={href}
+        className={itemClass}
+      >
         {text}
       </a>
     </li>
@@ -41,9 +44,18 @@ const SideBar: React.FC = () => {
         className='mt-6 w-full px-4'
       >
         <ul className='space-y-4'>
-          <ListItem href='#dashboard' text='Dashboard' />
-          <ListItem href='#analytics' text='Analytics' />
-          <ListItem href='#settings' text='Settings' />
+          <ListItem
+            href='#dashboard'
+            text='Dashboard'
+          />
+          <ListItem
+            href='#analytics'
+            text='Analytics'
+          />
+          <ListItem
+            href='#settings'
+            text='Settings'
+          />
         </ul>
       </motion.nav>
     </motion.aside>

@@ -41,7 +41,11 @@ const CodeAnalyzer: React.FC = () => {
         onChange={(e) => setUrl(e.target.value)}
       />
       <FileUpload onFileUpload={(selectedFile) => setFile(selectedFile)} />
-      <Button onClick={handleAnalyze} disabled={false} text='Analyze Code' />
+      <Button
+        onClick={handleAnalyze}
+        disabled={false}
+        text='Analyze Code'
+      />
 
       {loading && <p className='text-center text-gray-500'>Analyzing...</p>}
 
