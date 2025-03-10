@@ -8,25 +8,27 @@ import path from 'path';
 
 // Custom type for Next.js API Request with file
 interface NextApiRequestWithFile extends NextApiRequest {
-  file?: Express.Multer.File;
+  file?: File;
 }
-
-// Multer setup for file upload
-const upload = multer({
-  dest: 'uploads/', // Files will be uploaded to the 'uploads' folder
-});
 
 // Ensure the upload folder exists
 if (!fs.existsSync('uploads')) {
   fs.mkdirSync('uploads');
 }
 
-// Disable Next.js bodyParser to handle file uploads manually
-export const config = {
-  api: {
-    bodyParser: false, // Disable body parsing to handle file uploads
+// Configure Multer (Storage location and file naming)
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, 'uploads/'); // Save files in the "uploads" folder
   },
-};
+  filename: (req, file, cb) => {
+    cb(null, path.extname(file.originalname)); // Unique filename
+  },
+});
+
+const upload = multer({
+  storage,
+});
 
 // Middleware wrapper for multer
 const multerMiddleware = upload.single('file');
@@ -55,6 +57,7 @@ export async function POST(req: NextApiRequestWithFile, res: NextApiResponse) {
     } else if (req.file) {
       // Read uploaded file content
       const filePath = path.join(process.cwd(), req.file.path);
+      console.log('filepath', filePath);
       code = fs.readFileSync(filePath, 'utf-8');
     }
 
